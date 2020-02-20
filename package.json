@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/armandojhc/ExpressNoteTaker/issues"
   },
-  "homepage": "https://github.com/armandojhc/ExpressNoteTaker#readme"
+  "homepage": "https://github.com/armandojhc/ExpressNoteTaker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
