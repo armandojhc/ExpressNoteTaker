@@ -18,7 +18,7 @@ Step 2 - Click on the button title "Lets get Started" which will navigate the us
 Step 3 - Click on the text space that has a "Note Title" and "Note Text"  place holder text and enter the title and note content.
 ![Alt text](/assets/Screenshot3.jpg)
 
-Step 4 - Click the SAVE icon at the top right corner of the screen. This icon is what sends the request to the server to add the note that the user types in to the "data-base" , which in this case the data base is actually an array of objects located in the db.json file. 
+Step 4 - Click the SAVE icon at the top right corner of the screen. This icon is what sends the request to the server to add the note that the user types in to the "database" , which in this case the data base is actually an array of objects located in the db.json file. 
 
 ![Alt text](/assets/Screenshot4.jpg)
 
@@ -33,6 +33,11 @@ Step 6 - Click on the pencil icon at the top right corner. This will allow you t
 Step 7 - Click on the Note Taker icon letters and this should navigate the user back to the main home page.
 
 ![Alt text](/assets/Screenshot7.jpg)
+
+
+## Live Page Link:
+
+https://note-taker-app-armandojhc.herokuapp.com/
 
 
 
