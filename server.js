@@ -38,27 +38,83 @@ app.get("/api/notes", (req, res) => {
 
 })
 
-app.post("/api/notes", (req, res) => {
+// app.post("/api/notes", (req, res) => {
     
-    //Read the db.json file from disk using fs
+//     //Read the db.json file from disk using fs
 
-    //Parse it as json and stored the array in a variable
+//     //Parse it as json and stored the array in a variable
 
-    let dkfjsldkfj = JSON.parse(data);
+//     fs.readFile("db.json", "utf-8", (err, data) => {
+
+//         res.json(JSON.parse(data));
+
+//     });
+
+// })
+
+//     let dkfjsldkfj = JSON.parse(data);
+
+app.post("/api/notes", function(req, res) {
+
+    
+    fs.readFile("db.json", "utf-8", (err, notesData) => {
+
+        //Everything after you read the file from the hard drive happens here
+        let savedNotes = JSON.parse(notesData);
+
+        //Get the new note from the request
+        let newNote = req.body;
+        newNote.id = savedNotes.length;
+        
+        //Add the new note to the saved notes array
+        savedNotes.push(newNote);
+        
+        fs.writeFile("db.json", JSON.stringify(savedNotes), (err) => {
+            
+            res.send("Gibberish");
+
+        });
+        
+    
+    });
+
+    
+});
+
+app.delete("/api/notes/:id", function(req, res) {
+
+    
+    fs.readFile("db.json", "utf-8", (err, notesData) => {
+
+        let savedNotes = JSON.parse(notesData);
+
+        let noteID = req.params.id;
+        savedNotes.splice(noteID, 1);
+
+        
+        for (var i = 0; i < savedNotes.length; i++) {
+            let note = savedNotes[i];
+            note.id = i;
+        }
+        
+
+        fs.writeFile("db.json", JSON.stringify(savedNotes), (err) => {
+            
+            res.send("Gibberish");
+
+        });
+       
+        
+    
+    });
+
+    
+});
+    
+    
 
     
 
-    //Add the new note to the array
-
-    //Write that JSON.stringify(json array) back to disk as db.json
-
-    //res.json the notes array
-
-    
-    
-
-    
-})
 
 app.get("*", (req, res) => {
 
